@@ -1,0 +1,345 @@
+.mega-menu-header.for-devs-only {
+    /* variables required/used by navigation module */
+    --header-height: 0;
+    --main-height: 0;
+    /* for max-height limit for nav-group */
+}
+
+
+.mega-menu-header {
+    --header-bg-color: #fff;
+    --header-text-color: #000;
+    --header-brand-width: 8rem;
+    --header-modal-bg-color: #111;
+    --header-modal-text-color: #eee;
+    --header-position: relative;
+    --header-navbox-padding: 2rem;
+    /* overall padding used by navbox (main and sub) */
+    --header-navbox-indent-space: 2rem;
+    /* indent used by nav-links on child sub-menu(s) */
+}
+
+.mega-menu-header {
+    position: var(--header-position);
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    max-height: var(--header-height);
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    box-shadow: 1px 0 0 1px rgba(0, 0, 0, 0.15);
+    overflow-x: clip;
+}
+
+.mega-menu-header button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.mega-menu-header .mega-menu-header__wrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: var(--header-brand-width) 4rem;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: clip;
+}
+
+/* .mega-menu-header__wrapper .mega-menu__brand-wrapper {
+    margin: auto;
+} */
+
+.mega-menu__brand-wrapper .mega-menu__brand-image {
+    width: 100%;
+}
+
+.mega-menu-header__wrapper .mega-menu__menu-btn-wrapper {
+    justify-self: end;
+}
+
+
+.mega-menu-header .main-nav__nav {
+    background-color: var(--header-modal-bg-color);
+    color: var(--header-modal-text-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out,
+        visibility 0.4s ease-in-out;
+}
+
+.main-nav__nav.nav__open {
+    visibility: visible;
+    height: var(--main-height);
+    overflow: hidden;
+    opacity: 1;
+}
+
+.main-nav__nav a,
+.main-nav__nav button {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav__nav .main-nav__content-box {
+    min-width: 100vw;
+    height: 100%;
+}
+
+.main-nav__nav ul {
+    list-style: none;
+    display: grid;
+    grid-row-gap: 1rem;
+    padding-block: 1rem;
+}
+
+.main-nav__nav .li-item .nav-label,
+.main-nav__nav .li-item .nav-link {
+    font-size: 2.5ch;
+    color: var(--header-modal-text-color);
+    text-decoration: none;
+}
+
+.main-nav__nav .main-nav__nav-ul {
+    font-size: 2.5ch;
+    font-weight: 300;
+    padding-block: var(--header-navbox-padding);
+    transform: translateX(0vw);
+    transition: transform 0.3s ease 0s;
+}
+
+.main-nav__nav.nav__open.subnav__open .main-nav__nav-ul {
+    visibility: hidden;
+}
+
+.main-nav__nav-ul>.li-item,
+.sub-nav__nav-ul>.li-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.main-nav__nav-ul>.li-item.has-sub-nav::after,
+.sub-nav__nav-ul>.li-item.has-sub-nav::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600;
+    content: "\f054";
+    color: #fff;
+}
+
+.main-nav__nav-ul>.li-item.active {
+    border-bottom: 4px solid green;
+}
+
+.main-nav__nav.subnav__open .main-nav__nav-ul {
+    transform: translateX(-100vw);
+}
+
+.main-nav__nav .sub-nav__wrapper {
+    background-color: var(--header-modal-bg-color);
+    color: var(--header-modal-text-color);
+    position: absolute;
+    top: 0%;
+    left: 100vw;
+    width: 100vw;
+    height: var(--main-height);
+    padding-block: var(--header-navbox-padding);
+    visibility: hidden;
+}
+
+.sub-nav__wrapper.nav__open {
+    visibility: visible;
+}
+
+.sub-nav__wrapper .sub-nav__content-box {
+    margin-left: 0;
+}
+
+.sub-nav__wrapper .sub-nav__content-box .sub-nav__promo-wrapper {
+    display: none;
+}
+
+.sub-nav__wrapper .sub-nav-close-btn {
+    display: none;
+}
+
+.sub-nav__wrapper .sub-nav__nav-back-btn {
+    display: inline-grid;
+    grid-template-columns: var(--header-navbox-indent-space) 1fr;
+    justify-items: start;
+    align-items: center;
+    width: 100%;
+}
+
+.sub-nav__wrapper .sub-nav__nav-back-btn::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f053";
+    padding-right: 1rem;
+}
+
+.sub-nav__wrapper .sub-nav__nav-ul {
+    margin-left: var(--header-navbox-indent-space);
+}
+
+.sub-nav__nav-ul>.li-item .nav-link.nav-link__current {
+    font-weight: bold;
+}
+
+
+@media (min-width: 768px) {
+    .mega-menu-header {
+        display: flex;
+    }
+
+    .mega-menu-header .mega-menu-header__wrapper {
+        grid-template-columns: var(--header-brand-width) 1fr;
+    }
+
+    .mega-menu-header .mega-menu__menu-btn-wrapper {
+        display: none;
+        visibility: hidden;
+    }
+
+    .mega-menu-header .main-nav__nav {
+        visibility: visible;
+        opacity: 1;
+        background-color: transparent;
+        position: relative;
+        top: 0;
+        height: auto;
+        height: 100%;
+        width: auto;
+    }
+
+    .main-nav__nav .main-nav__content-box {
+        min-width: auto;
+    }
+
+    .main-nav__nav .main-nav__nav-ul {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        grid-column-gap: 1rem;
+        padding: 0;
+        height: 100%;
+    }
+
+    .main-nav__nav .main-nav__nav-ul,
+    .main-nav__nav.subnav__open .main-nav__nav-ul,
+    .main-nav__nav.nav__open.subnav__open .main-nav__nav-ul {
+        transform: none;
+        /* this is to fix the position: fixed CSS issue */
+        visibility: visible;
+    }
+
+    .main-nav__nav-ul>.li-item {
+        border-bottom: 4px solid transparent;
+    }
+
+    .main-nav__nav-ul>.li-item>.nav-link {
+        border-bottom: 4px solid transparent;
+    }
+
+    .main-nav__nav-ul>.li-item>.nav-link:hover {
+        border-bottom: 4px solid gray;
+    }
+
+    .main-nav__nav-ul>.li-item.current {
+        font-weight: 500;
+    }
+
+    .main-nav__nav-ul .sub-nav__wrapper {
+        position: fixed;
+        left: 0;
+        top: var(--header-height);
+        height: 0;
+        transition: height 0.3s ease;
+    }
+
+    .sub-nav__wrapper.nav__open {
+        /* height: 100%; */
+        /* Use 100% if full screen */
+        height: fit-content;
+    }
+
+    .sub-nav__wrapper .sub-nav__content-box {
+        margin-inline: auto;
+        display: grid;
+        grid-template-columns: 1fr 4rem;
+        grid-template-areas: "sub-nav-content sub-nav-close-btn";
+    }
+
+    .sub-nav__content-box.two-cols {
+        grid-template-columns: 1fr 1fr 4rem;
+        grid-template-areas: "sub-nav-content sub-nav-promo sub-nav-close-btn";
+    }
+
+    .sub-nav__content-box.two-cols .sub-nav__promo-wrapper {
+        display: grid;
+    }
+
+    .sub-nav__content-box.two-cols .sub-nav__promo-wrapper .sub-nav__promo-item {
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 1ch;
+    }
+
+    .main-nav__nav-ul>.li-item .nav-link {
+        display: grid;
+        align-content: center;
+        padding-inline: 1ch;
+        font-size: 2ch;
+        color: #000;
+        height: 100%;
+        transition: scale 0.1s ease;
+    }
+
+    .sub-nav__nav-ul>.li-item>.nav-link {
+        color: var(--header-modal-text-color);
+        font-weight: 300;
+        padding-inline: 0;
+    }
+
+    .sub-nav__nav-ul>.li-item>.nav-link:hover {
+        /* scale: 1.1; */
+        text-decoration: underline;
+        text-underline-offset: 1ch;
+        transition: all 0.3s ease;
+    }
+
+    .sub-nav__wrapper .sub-nav__nav-ul {
+        grid-auto-rows: 3rem;
+        grid-area: sub-nav-content;
+        padding-inline: 0;
+        margin-left: 0;
+    }
+
+    .sub-nav__wrapper .sub-nav-close-btn {
+        display: block;
+        grid-area: sub-nav-close-btn;
+        align-self: baseline;
+        /* transition: transform 0.3s ease; */
+        transition: color 0.3s ease;
+    }
+
+    .sub-nav__wrapper .sub-nav-close-btn:hover {
+        /* transform: rotate(45deg); */
+        color: red;
+    }
+
+    .main-nav__nav-ul>.li-item.has-sub-nav::after,
+    .sub-nav__nav-ul>.li-item.has-sub-nav::after,
+    .sub-nav__wrapper .sub-nav__nav-back-btn {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {}

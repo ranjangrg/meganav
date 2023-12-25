@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega menu navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="/index.css" rel="stylesheet" />
+    <link href="/navigation.css" rel="stylesheet" />
+    <script src="./navigation.js"></script>
+</head>
+
+<body>
+    <header id="custom-header" class="mega-menu-header">
+        <div class="mega-menu-header__wrapper container">
+            <div class="mega-menu__brand-wrapper">
+                <!-- <h2> logo here</h2> -->
+                <img class="mega-menu__brand-image" src="https://www.royalholloway.ac.uk/images/logoRoyalHolloway2x.png"
+                    role="presentation" />
+            </div>
+            <div class="mega-menu__menu-btn-wrapper">
+                <button class="mega-menu__menu-btn" type="button" aria-controls="main-nav__nav" aria-expanded="false"><i
+                        class="fa-solid fa-2x fa-bars"></i></button>
+            </div>
+            <nav id="main-nav__nav" class="main-nav__nav">
+                <div class="main-nav__content-box">
+                    <ul class="main-nav__nav-ul container">
+                        <li class="li-item has-sub-nav current">
+                            <a class="nav-link" href="#" aria-controls="sub-nav__nav-00" aria-expanded="false">
+                                Studying here</a>
+                            <nav id="sub-nav__nav-00" class="sub-nav__wrapper">
+                                <div class="sub-nav__content-box container">
+                                    <button class="sub-nav__nav-back-btn nav-label" type="button"
+                                        aria-controls="sub-nav__nav-00" aria-expanded="false">Main menu</button>
+                                    <button class="sub-nav-close-btn" type="button" aria-controls="sub-nav__nav-00"
+                                        aria-expanded="false">
+                                        <i class="fa-regular fa-2x fa-circle-xmark"></i>
+                                    </button>
+                                    <ul class="sub-nav__nav-ul">
+                                        <li class="li-item"><a class="nav-link nav-link__current" href="#">
+                                            Studying here</a>
+                                        </li>
+                                        <li class="li-item"><a class="nav-link" href="#">Find your course</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Applying</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Fees and funding</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">International students</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
+                        <li class="li-item has-sub-nav">
+                            <a class="nav-link" href="#" aria-controls="sub-nav__nav-01" aria-expanded="false">
+                                Student life</a>
+                            <nav id="sub-nav__nav-01" class="sub-nav__wrapper">
+                                <div class="sub-nav__content-box two-cols container">
+                                    <button class="sub-nav__nav-back-btn nav-label" type="button"
+                                        aria-controls="sub-nav__nav-01" aria-expanded="false">Main menu</button>
+                                    <button class="sub-nav-close-btn" type="button" aria-controls="sub-nav__nav-01"
+                                        aria-expanded="false">
+                                        <i class="fa-regular fa-2x fa-circle-xmark"></i>
+                                    </button>
+                                    <ul class="sub-nav__nav-ul">
+                                        <li class="li-item"><a class="nav-link nav-link__current" href="#">Student life</a>
+                                        </li>
+                                        <li class="li-item"><a class="nav-link" href="#">Our campus</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Accommodation</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Being a student</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Visit Royal Holloway</a></li>
+                                    </ul>
+                                    <ul class="sub-nav__promo-wrapper">
+                                        <li class="sub-nav__promo-item">Item 1</li>
+                                        <li class="sub-nav__promo-item">Item 2</li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
+                        <li class="li-item"><a class="nav-link" href="#">Research & Teaching</a></li>
+                        <li class="li-item has-sub-nav">
+                            <a class="nav-link" href="#" aria-controls="sub-nav__nav-04" aria-expanded="false">
+                                About us</a>
+                            <nav id="sub-nav__nav-04" class="sub-nav__wrapper">
+                                <div class="sub-nav__content-box container">
+                                    <button class="sub-nav__nav-back-btn nav-label" type="button"
+                                        aria-controls="sub-nav__nav-04" aria-expanded="false">Main menu</button>
+                                    <button class="sub-nav-close-btn" type="button" aria-controls="sub-nav__nav-04"
+                                        aria-expanded="false">
+                                        <i class="fa-regular fa-2x fa-circle-xmark"></i>
+                                    </button>
+                                    <ul class="sub-nav__nav-ul">
+                                        <li class="li-item"><a class="nav-link nav-link__current" href="#">About us</a>
+                                        </li>
+                                        <li class="li-item"><a class="nav-link" href="#">Contact us</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">News</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Events</a></li>
+                                        <li class="li-item"><a class="nav-link" href="#">Our history</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="banner" style="background-image: url('https://api.lorem.space/image/finance?w=1600&h=900');">
+            <div class="banner__content container">
+                <h2> Some title here </h2>
+            </div>
+        </div>
+        <hr />
+        <div class="banner" style="background-image: url('https://api.lorem.space/image/finance?w=1600&h=900');">
+            <div class="banner__content container">
+                <h2> Some title here </h2>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let navController = new NavigationController("custom-header");
+        });
+    </script>
+</body>
+
+</html>
