@@ -23,3 +23,29 @@ document.addEventListener("DOMContentLoaded", function () {
     let navController = new NavigationController("custom-header");
 });
 ```
+
+## Using meganav as a module
+### Export the `navigation-controller.js`.
+```js
+...
+export default NavigationController;
+```
+### Import the meganav controller class
+```js
+import NavigationController from "./navigation-controller.js";
+
+document.addEventListener("DOMContentLoaded", function () {
+    // testing new controller class
+    let navController = new NavigationController("custom-header");
+});
+```
+### Import the code within html
+```html
+<html>
+    ...
+    <body>
+        ...
+        <script src="./navigation-module.js" type="module"></script>
+    </body>
+</html>
+```
